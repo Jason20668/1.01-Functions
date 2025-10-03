@@ -1,5 +1,5 @@
 // Helper function: writes any HTML into the #out div
-function render (html) {
+function render(html) {
   document.getElementById('out').innerHTML = html
 }
 
@@ -10,8 +10,14 @@ function render (html) {
   - If they type something, display "Hello, NAME!"
   - If they cancel or leave blank, show a friendly message
 */
-function greet () {
-  // TODO: Write your code here
+function greet() {
+  const name = prompt("What is your name?")
+  if (!name) {
+    render("<h1>ANSWER THE PROMPTS<h1>")
+    return
+  } else {
+    render("<p>Hello, " + name + ". Nice to meet you!")
+  }
 }
 
 /* 
@@ -22,7 +28,7 @@ function greet () {
   - Calculate the average
   - Display the average AND the list of numbers
 */
-function averageNumbers () {
+function averageNumbers() {
   // TODO: Write your code here
 }
 
@@ -33,8 +39,18 @@ function averageNumbers () {
   - Decide whether it's morning, afternoon, or evening
   - Display a message like "Good morning!" 
 */
-function timeOfDay () {
-  // TODO: Write your code here
+function timeOfDay() {
+  const h = new Date().getHours()
+  let msg = ''
+  if (h < 12) {
+    msg = 'Good Morning!'
+  } else if (h < 18) {
+    msg = 'Good Evening'
+  } else {
+    msg = 'Good Night'
+  }
+  render(`<p>${msg}<p>`)
+
 }
 
 /* 
@@ -45,8 +61,22 @@ function timeOfDay () {
   - Display the result
   - Handle invalid input (like blanks or min >= max)
 */
-function randomBetween () {
-  // TODO: Write your code here
+function randomBetween() {
+  const min = parseInt(prompt("Enter a minimum number:"))
+  const max = parseInt(prompt("Enter a maximum number:"))
+
+  if (isNaN(min) || isNaN(max)){
+    render("<h1>ANSWER THE PROMPTS<h1>")
+    return
+  }
+
+  if (min >= max) {
+    render("<p>MAKE YOUR MIN LESS THAN MORE MAX<p>")
+    return
+  }
+
+  const randomNumber = Math.floor(Math.random() * (max - min + 1) + min)
+  render("Your random number between " + min + " and " + max + " is: " + randomNumber)
 }
 
 /* 
@@ -55,7 +85,7 @@ function randomBetween () {
   - Clear whatever is inside #out
   - Replace it with a placeholder message like "Output cleared."
 */
-function clearOutput () {
+function clearOutput() {
   // TODO: Write your code here
 }
 
