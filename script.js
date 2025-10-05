@@ -76,6 +76,8 @@ function randomBetween() {
 function clearOutput() {
   render ("<p>Output will appear here…</p>")
   document.getElementById('titleID').innerHTML = ('🍂 JS Functions Demo')
+  document.getElementById('out').style.backgroundColor = "#fef3c7"
+  document.getElementById('out').style.color = "black"
 }
 
 
@@ -85,11 +87,29 @@ document.getElementById('titleID').innerHTML = titleName
 }
 
 function txtColor() {
+let out = document.getElementById('out')
 
+    if (out.style.color === "" || out.style.color == "black") {
+    out.style.color = "red";
+  } else if (out.style.color == "red") {
+    out.style.color = "green";
+  } else if (out.style.color == "green") {
+    out.style.color = "black";
+  }
 }
 
 function bgColor() {
+  const backgroundNumber = Math.floor(Math.random() * 4)
 
+  if (backgroundNumber === 0){
+    document.getElementById('out').style.backgroundColor = "red"
+  } else if (backgroundNumber === 1){
+    document.getElementById('out').style.backgroundColor = "blue"
+  } else if (backgroundNumber === 2){
+    document.getElementById('out').style.backgroundColor = "yellow"
+  } else {
+    document.getElementById('out').style.backgroundColor = "green"
+  }
 }
 
 function numDouble() {
