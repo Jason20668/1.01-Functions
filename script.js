@@ -21,19 +21,7 @@ function greet() {
 }
 
 /* 
-  Function 2 — averageNumbers()
-  ------------------------------
-  - Prompt the user for a list of numbers separated by commas
-  - Split the input into an array, turn into numbers
-  - Calculate the average
-  - Display the average AND the list of numbers
-*/
-function averageNumbers() {
-  // TODO: Write your code here
-}
-
-/* 
-  Function 3 — timeOfDay()
+  Function 2 — timeOfDay()
   -------------------------
   - Get the current hour from the computer clock
   - Decide whether it's morning, afternoon, or evening
@@ -54,7 +42,7 @@ function timeOfDay() {
 }
 
 /* 
-  Function 4 — randomBetween()
+  Function 3 — randomBetween()
   -----------------------------
   - Prompt the user for a minimum and maximum number
   - Generate a random number between them
@@ -86,14 +74,37 @@ function randomBetween() {
   - Replace it with a placeholder message like "Output cleared."
 */
 function clearOutput() {
-  // TODO: Write your code here
+  
+}
+
+
+function newTitle() {
+
+}
+
+function txtColor() {
+
+}
+
+function numDouble() {
+  let num1 = parseInt(prompt("What is your number?"))
+  let num2 = num1 * 2
+
+  if (isNaN(num1)) {
+    render("<p>GIVE A NUMBER<p>")
+    return
+  } else {
+    render (`<p>Your number doubled is: ${num2}<p>`)
+  }
 }
 
 // ---- Event listeners for the demo buttons ----
 document.getElementById('btnGreet').addEventListener('click', greet)
-document.getElementById('btnAvg').addEventListener('click', averageNumbers)
 document.getElementById('btnTime').addEventListener('click', timeOfDay)
 document.getElementById('btnRandom').addEventListener('click', randomBetween)
+document.getElementById('btnTitle').addEventListener('click', newTitle)
+document.getElementById('btnColor').addEventListener('click', txtColor)
+document.getElementById('btnDouble').addEventListener('click', numDouble)
 document.getElementById('btnClear').addEventListener('click', clearOutput)
 
 /* 
