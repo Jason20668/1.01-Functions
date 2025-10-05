@@ -82,3 +82,10 @@ main {
   color: #fff;
 }
 #btnDouble:hover { background-color: #2e1b99; }
+
+#btnBGC {
+  background-color: #dc26c4;
+  border-color: #991b8e;
+  color: #fff;
+}
+#btnBGC:hover { background-color: #991b64; }

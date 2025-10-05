@@ -74,15 +74,21 @@ function randomBetween() {
   - Replace it with a placeholder message like "Output cleared."
 */
 function clearOutput() {
-  
+  render ("<p>Output will appear here…</p>")
+  document.getElementById('titleID').innerHTML = ('🍂 JS Functions Demo')
 }
 
 
 function newTitle() {
-
+let titleName = prompt("What is the new Title?")
+document.getElementById('titleID').innerHTML = titleName
 }
 
 function txtColor() {
+
+}
+
+function bgColor() {
 
 }
 
@@ -104,6 +110,7 @@ document.getElementById('btnTime').addEventListener('click', timeOfDay)
 document.getElementById('btnRandom').addEventListener('click', randomBetween)
 document.getElementById('btnTitle').addEventListener('click', newTitle)
 document.getElementById('btnColor').addEventListener('click', txtColor)
+document.getElementById('btnBGC').addEventListener('click', bgColor)
 document.getElementById('btnDouble').addEventListener('click', numDouble)
 document.getElementById('btnClear').addEventListener('click', clearOutput)
 
